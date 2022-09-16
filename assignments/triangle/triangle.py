@@ -14,10 +14,14 @@ def herons(a,b,c):
     #Herons Formula: A = SQRT(s(s-a)(s-b)(s-c)) where s = (a+b+c)/2
     (area, s) = (0, 0)
     s = (a+b+c)/2
-    area = math.sqrt((s*(s-a)*(s-b)*(s-c)))
-    return area
+    if ((s*(s-a)*(s-b)*(s-c)) > 0):
+        area = math.sqrt((s*(s-a)*(s-b)*(s-c)))
+    else:
+        area = 0
+    return (area, s)
 
-
+def realTriangle(a,b,c):
+    return ((a+b>c) and (b+c>a) and (c+a>b))
 
 def prompt():
     answer = input("Enter three sides of a triangle, separated by spaces(3 4 5): ")
@@ -33,8 +37,14 @@ def prompt():
         c = int(l[2])
     else:
         prompt()
-    print(herons(a,b,c))
-
+    
+    (area, s) = (herons(a,b,c))
+    print("Area: " + str(area))
+    print("Perimeter: " + str(2*s))
+    if (realTriangle(a,b,c)):
+        print(str(a) + ", " + str(b) + ", and " + str(c) + " are valid sides of a triangle!")
+    else:
+        print(str(a) + ", " + str(b) + ", and " + str(c) + " are not valid sides of a triangle...")
     
 
 
