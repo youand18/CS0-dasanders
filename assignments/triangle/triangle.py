@@ -59,6 +59,12 @@ def prompt():
         print(str(a) + ", " + str(b) + ", and " + str(c) + " are valid sides of a triangle!")
     else:
         print(str(a) + ", " + str(b) + ", and " + str(c) + " are not valid sides of a triangle...")
-    return()
+    answer = input("Test another triangle? (Y/N): ")
+    if (answer == "Y"):
+        print("=)")
+        prompt()
+    else:
+        print("Okay... =(")
+        return()
     
 prompt()
