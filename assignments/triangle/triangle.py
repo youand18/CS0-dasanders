@@ -15,7 +15,6 @@ def isIntStr(string):
             return False
     return True
 
-
 def herons(a,b,c):
     #Herons Formula: A = SQRT(s(s-a)(s-b)(s-c)) where s = (a+b+c)/2
     (area, s) = (0, 0)
@@ -29,15 +28,14 @@ def herons(a,b,c):
 def realTriangle(a,b,c):
     return ((a+b>c) and (b+c>a) and (c+a>b))
 
-
-
-
-
 def prompt():
     answer = input("Enter three sides of a triangle, separated by spaces(3 4 5): ")
+
+    #input TEST to get three random sides
     if (answer == "TEST"):
         (a,b,c) = (random.randrange(1,100),random.randrange(1,100),random.randrange(1,100))
     else:
+    #otherwise it will do input checks
         (a,b,c) = (0,0,0)
         l = []
         l = answer.split()
@@ -49,11 +47,14 @@ def prompt():
             b = int(l[1])
             c = int(l[2])
         else:
+            #if it fails the input checks it just reprompts the user
             prompt()
 
     (area, s) = (herons(a,b,c))
     print("Area: " + str(area))
+    #since s is just half the perimeter we can use that to easily print out perimeter too
     print("Perimeter: " + str(2*s))
+    #using II from the Algorithm
     if (realTriangle(a,b,c)):
         print(str(a) + ", " + str(b) + ", and " + str(c) + " are valid sides of a triangle!")
     else:
