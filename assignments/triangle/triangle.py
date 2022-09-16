@@ -1,5 +1,5 @@
 #David Sanders Area and Perimeter of a Triangle code
-
+import math
 #Algorithm Steps:
 #1. 
 
@@ -10,23 +10,32 @@ def isIntStr(string):
     return True
 
 
+def herons(a,b,c):
+    #Herons Formula: A = SQRT(s(s-a)(s-b)(s-c)) where s = (a+b+c)/2
+    (area, s) = (0, 0)
+    s = (a+b+c)/2
+    area = math.sqrt((s*(s-a)*(s-b)*(s-c)))
+    return area
+
 
 
 def prompt():
     answer = input("Enter three sides of a triangle, separated by spaces(3 4 5): ")
-    (x,y,z) = (0,0,0)
-    a = []
-    a = answer.split()
-    if (len(a) < 3):
+    (a,b,c) = (0,0,0)
+    l = []
+    l = answer.split()
+    if (len(l) < 3):
         prompt()
         return
-    if (isIntStr(a[0]) and isIntStr(a[1]) and isIntStr(a[2])):
-        x = int(a[0])
-        y = int(a[1])
-        z = int(a[2])
+    if (isIntStr(l[0]) and isIntStr(l[1]) and isIntStr(l[2])):
+        a = int(l[0])
+        b = int(l[1])
+        c = int(l[2])
     else:
         prompt()
-    return
+    print(herons(a,b,c))
+
+    
 
 
 prompt()
