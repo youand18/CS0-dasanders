@@ -21,6 +21,6 @@ grade: 110/100
 
   ## 4 - Conditionals
 - met all the requirements, implemented automatic testing
-- and I did the bonus objective.
-- grade 110/100
+- all conditional logic checks out and returns proper answer.
+- grade 100/100
 ### Labs
