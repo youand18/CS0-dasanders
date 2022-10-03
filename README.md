@@ -14,4 +14,13 @@
 - program tested by hand many times, can be tested repeatedly using TEST
 grade: 110/100
 
+  ## 3 - Functions
+- met all the requirements and implemented automatic testing
+- didn't do the bonus part
+- grade: 100/100
+
+  ## 4 - Conditionals
+- met all the requirements, implemented automatic testing
+- and I did the bonus objective.
+- grade 110/100
 ### Labs
