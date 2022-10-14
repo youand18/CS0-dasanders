@@ -2,12 +2,12 @@ import random
 
 #David Sanders Beginning Python Guess the Number Game
 
+
 name = input("Hello! What is your name? ")
 playing = True
+
 while(playing):
     rightNumber = random.randrange(1,20)
-
-
     guessNumber = 0
     totalGuesses = 0
     while (guessNumber != rightNumber or (totalGuesses >= 6)):
