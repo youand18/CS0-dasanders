@@ -10,7 +10,7 @@ while(playing):
     rightNumber = random.randrange(1,20)
     guessNumber = 0
     totalGuesses = 0
-    while (guessNumber != rightNumber or (totalGuesses >= 6)):
+    while (guessNumber != rightNumber and (totalGuesses < 6)):
         print("You have guessed " + str(totalGuesses) + " time(s).")
         guessNumber = int(input("Guess a number between 1 and 20: "))
         if (guessNumber != rightNumber and guessNumber > rightNumber):

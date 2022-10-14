@@ -23,4 +23,11 @@ grade: 110/100
 - met all the requirements, implemented automatic testing
 - all conditional logic checks out and returns proper answer.
 - grade 100/100
+
+  ## 5 - Loops
+- Game prompts when it is supposed to,
+- works properly with all parameters of the game
+- Continues the game until the user wants to stop.
+- grade 110/100 
+
 ### Labs
