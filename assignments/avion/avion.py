@@ -8,7 +8,7 @@ def FBIcheck(pingStr):
     i = 0
     for char in pingStr:
         if (char == "F"):
-            if (i < len(pingStr-2)):
+            if (i < len(pingStr)-2):
                 if (pingStr[i+1] == "B" and pingStr[i+2] == "I"):
                     return True
         i = i + 1    
@@ -28,5 +28,8 @@ def main():
         printString = ""
         for ping in goodPingLocations:
             printString = printString + ping + " "
+        print(printString)
     else:
         print("HE GOT AWAY!")
+
+main()
