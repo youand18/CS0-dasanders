@@ -29,5 +29,12 @@ grade: 110/100
 - works properly with all parameters of the game
 - Continues the game until the user wants to stop.
 - grade 110/100 
+  ## 6 - Avian String Problem
+- solution accepted by kattis, 14/14 tests passed
+- wrote and tested 3 test cases as the requirement asked, all different from the given tests
+- screenshot is in the file passingKattisTests.png
+- readme is up to date
+- Total points = 100
+
 
 ### Labs
