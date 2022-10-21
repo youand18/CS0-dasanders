@@ -15,7 +15,7 @@ def FBIcheck(pingStr):
     return False
 
 def main():
-    pings = [input() for _ in range(5)]
+    pings = []#[input() for _ in range(5)]
     i = 1
     goodPingLocations = []
     atLeastOne = False
@@ -33,3 +33,12 @@ def main():
         print("HE GOT AWAY!")
 
 main()
+
+
+def test():
+    assert FBIcheck("FERQSDFBI-1") == True
+    assert FBIcheck("") == False
+    assert FBIcheck("FBI0") == True
+    print("Passed all tests!")
+
+test()
