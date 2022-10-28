@@ -36,5 +36,11 @@ grade: 110/100
 - readme is up to date
 - Total points = 100
 
+  ## 7 - Simon Says
+- solution accepted by kattis (70 points)
+- screenshot is in the file as kattis.png ( 5 points)
+- readme is up to date (5 points)
+- total points = 80
+
 
 ### Labs
