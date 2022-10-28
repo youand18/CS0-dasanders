@@ -1,9 +1,9 @@
-lines = ["Simon says dance."]#raw_input()
+lines = raw_input()
 
 
 for line in lines:
     printstring = ""
     if (line.startswith("simon says") or line.startswith("Simon says")):
         #should cut out "simon says"
-        printstring = line.split()[2:]   
+        printstring = " " + str(line.split()[2:])   
     print(printstring)
