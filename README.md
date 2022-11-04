@@ -42,5 +42,13 @@ grade: 110/100
 - readme is up to date (5 points)
 - total points = 80
 
+  ## 8 - Falling Apart Assignment
+- solution accepted (70 points)
+- wrote 3 test cases as the requirement asked (20 points)
+- screenshots are in the file as kattis.png and tests_passed.png (5 points)
+- readme is up to date (5 points)
+Total points = 100
+
+
 
 ### Labs
