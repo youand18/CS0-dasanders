@@ -20,7 +20,7 @@ def test():
     assert working("3", ["1","3","2"]) == (4,2), "error on test 1"
     assert working("1", ["100"]) == (100,0), "error on test 2"
     assert working("5", ["1","10","2","3","4"]) == (14, 6), "error on test 3"
-    print("testing passed.")
+    print("testing passed!")
     main()
 
 
