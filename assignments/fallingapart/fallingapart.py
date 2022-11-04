@@ -16,5 +16,6 @@ while i < int(line1):
     else:
         BobScore = BobScore + int(line2[i])
     i = i + 1
+    AliceTurn = not(AliceTurn)
 
 print(str(AliceScore) + " " + str(BobScore))
