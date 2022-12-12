@@ -120,7 +120,7 @@ def hangman(stateInt, correctString, correctStringChecks):
         if(letterGuess.isalpha()):
             lettersGuessed.append(letterGuess)
             guessString = "Guesses: "
-            for letter in letterGuessed:
+            for letter in lettersGuessed:
                 guessString = guessString + (letter + ",")
             print(guessString)
             changed = False
@@ -137,11 +137,13 @@ def hangman(stateInt, correctString, correctStringChecks):
                     print("You Lose! The correct word was %s"%(correctString) + ".")
                     time.sleep(3)
                     going = False
+                    main()
             elif (checkWin(correctString, correctStringChecks)):
                 hangmanGuessLine(correctStringChecks, correctString)
                 print("Congratulations, you won!")
                 time.sleep()
                 going = False
+                main()
 
 def main():
     lineCount = 0
