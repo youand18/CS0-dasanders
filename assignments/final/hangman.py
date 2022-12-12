@@ -12,6 +12,8 @@ def clear():
     else:
         _ = system('clear')
 
+
+#The hangman states from the first assignment
 def hangmanStates(stateInt):
     if(stateInt == 0):
         print("""
@@ -91,6 +93,9 @@ def hangmanStates(stateInt):
 ------------- 	    
         """)
 
+
+#this function handles the output of the guess line
+#for example: T_S_ could be a potential guessline for the word test
 def hangmanGuessLine(correctStringChecks, correctString):
     printString = ""
     i = 0
@@ -102,12 +107,15 @@ def hangmanGuessLine(correctStringChecks, correctString):
         i = i + 1
     print(printString)
 
+#checking to see if all the boolean states are true, meaning the player has correctly guessed all the letters
 def checkWin(correctString, correctStringChecks):
     for boole in correctStringChecks:
         if (boole == False):
             return False
     return True
 
+
+#driver function
 def hangman(stateInt, correctString, correctStringChecks):
     clear()
     going = True
@@ -117,6 +125,7 @@ def hangman(stateInt, correctString, correctStringChecks):
         hangmanStates(stateInt)
         hangmanGuessLine(correctStringChecks, correctString)
         letterGuess = input("Enter Guess: ")
+        #the isalpha check makes sure you don't accidentally send in an invalid attempt.
         if(letterGuess.isalpha()):
             lettersGuessed.append(letterGuess)
             guessString = "Guesses: "
@@ -125,11 +134,13 @@ def hangman(stateInt, correctString, correctStringChecks):
             print(guessString)
             changed = False
             i = 0
+            #checking if guess was correct
             for char in correctString:
                 if (letterGuess == char):
                     correctStringChecks[i] = True
                     changed = True
                 i = i + 1
+            #these if statements check the game state, and will either cycle to the next hangman state or tell the player they won/lost
             if (changed == False):
                 stateInt = stateInt + 1
                 if (stateInt >= 6):
@@ -137,20 +148,28 @@ def hangman(stateInt, correctString, correctStringChecks):
                     print("You Lose! The correct word was %s"%(correctString) + ".")
                     time.sleep(3)
                     going = False
+                    endingcheck = input("Would you like to continue? (Y/N): ")
+                    if (endingcheck == "N" or endingcheck == "n"):
+                        return()
                     main()
             elif (checkWin(correctString, correctStringChecks)):
                 hangmanGuessLine(correctStringChecks, correctString)
                 print("Congratulations, you won!")
-                time.sleep()
+                time.sleep(3)
                 going = False
+                endingcheck = input("Would you like to continue? (Y/N): ")
+                if (endingcheck == "N" or endingcheck == "n"):
+                    return()
                 main()
 
 def main():
-    lineCount = 0
     #Hangman wordlist from https://github.com/Xethron/Hangman/blob/master/words.txt
     file = open('hangmanwords.txt')
+    #reads in the words to the content array
     content = file.readlines()
+    #then picks a random word
     correctString = content[random.randrange(0,853)]
+    #this is all just setting the base values for the start of a hangman game.
     correctStringChecks = []
     state = 0
     for char in correctString:

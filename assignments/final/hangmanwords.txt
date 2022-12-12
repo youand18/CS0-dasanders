@@ -801,6 +801,7 @@ waiting
 walk
 wall
 war
+wars
 warm
 wash
 waste
